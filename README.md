@@ -1,2 +1,60 @@
 # laboratorioai900
 Explorando a automação do Machine Learning do Azure
+
+- Criar um novo espaço de trabalho em https://ml.azure.com/ clicando em "Espaços de trabalho" -> "Novo
+  - Digite o nome do espaço de trabalho em "Nome do espaço de trabalho"
+  - Clique em "Criar"
+- Entrar no espaço de trabalho criado
+- Criar um ML automatizado em "ML automatizado"
+  - Clicar em "Novo trabalho de ML automatizado"
+  - preencher com os seguintes dados
+    - Configurações básicas:
+      - Nome do Trabalho: mslearn-bike-automl
+      - Nome do experimento: mslearn-bike-rental
+      - Descrição: Automated machine learning for bike rental prediction
+      - Marcas: none
+    - Tipo de tarefa e dados
+      - Selecionar tipo de tarefa: Regressão
+      - Selecionar dados: Clicar em "Criar"
+        - Nome: AluguelDeBicicletas
+        - Descrição: Dados históricos de aluguel de bicicleta
+        - Tipo: Tabular (MLV1)
+       - Clicar em "Avançar"
+        - Escolha uma fonte para o ativo de dados
+          - Clicar em "De arquivos da Web"
+       - Clicar em "Avançar"
+         - Insira uma URL da Web
+           - URL da Web: https://aka.ms/bike-rentals
+           - Deixar desmarcado "Ignorar validação dos dados"
+       - Clicar em "Avançar"
+         - Configurações
+           - Formato do arquivo: Delimitado
+           - Delimitador: Vírgula
+           - Codificação: UTF-8
+           - Cabeçalho de Coluna: Somente o primeiro arquivo tem cabeçalhos
+           - Ignorar Linhas: Nenhuma 
+        - Clicar em "Avançar"
+          - Esquema
+            - Rever se os dados estão corretos           
+        - Clicar em "Avançar"
+          - Examinar
+            - Vericar os dados e clicar em "Criar"
+  - Configurações:
+    - Tipo de tarefa: regressão
+    - Conjunto de dados: bike-rentals
+    - Coluna destino: Rentals (como inteiro)
+    - Configurações adicionais
+      - Métrica principal: Erro quadrático normalizado
+      - Explicar método: não
+      - Usar todos os métodos suportados: Não
+    - Limites: Manter o padrão
+    - Validação e teste:
+      - Tipo de validação: Dividir valores de treino e validação
+      - Porcentagem: 10
+  - Computação:
+    - Selecione o tipo de computação: Serveless
+    - Tipo de máquina virtual: CPU
+    - Número de instâncias: 1
+  - Exanimar
+    - Verificar os dados e finalizar
+    
